@@ -1,0 +1,27 @@
+---
+title: "Stat400project"
+author: "JamesTondt"
+date: "2023-11-29"
+output: html_document
+---
+
+## Front Matter
+
+```{r}
+#Libraries
+library(tidyverse)
+library(readr)
+
+#Import Data
+Credit_card_fraud <- read_csv("C:/Users/james/OneDrive/Desktop/Credit card fraud.csv")
+
+```
+
+
+```{r}
+CCF2 <- 
+  Credit_card_fraud %>%
+  select(TARGET, CODE_GENDER, AMT_INCOME_TOTAL, AMT_CREDIT, NAME_INCOME_TYPE, NAME_EDUCATION_TYPE, NAME_FAMILY_STATUS, NAME_HOUSING_TYPE) %>%
+    filter(CODE_GENDER != "XNA")
+```
+
